@@ -1,0 +1,99 @@
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { FaUserTie } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-black text-white p-6">
+      <section className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4">La Famiglia</h1>
+        <p className="text-lg mb-6">Те, кто не пришёл — а зашёл и забрал.</p>
+        <div className="flex justify-center">
+          <Image src="/images/scrooge-logo.png" alt="La Famiglia Logo" width={150} height={150} />
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="mt-6 bg-red-600 text-white font-bold py-2 px-4 rounded-xl inline-block shadow-lg"
+        >
+          🚨 НАБОР ОТКРЫТ — СЛОТЫ ОГРАНИЧЕНЫ 🚨
+        </motion.div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-2xl font-bold text-center mb-6">👥 Команда La Famiglia</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="bg-gray-900 border-gray-700">
+            <CardContent className="p-6 text-center">
+              <FaUserTie className="text-red-500 text-3xl mb-2" />
+              <h3 className="text-lg font-bold">@DonVitoBoss</h3>
+              <p className="text-sm text-gray-400">Главный. Контроль, допуск, движение. Без него — никто не двигается.</p>
+              <blockquote className="italic text-gray-500 mt-2">"Семья — это не слова. Это деньги, молчание и действие."</blockquote>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gray-900 border-gray-700">
+            <CardContent className="p-6 text-center">
+              <FaUserTie className="text-yellow-400 text-3xl mb-2" />
+              <h3 className="text-lg font-bold">@IlContabile47</h3>
+              <p className="text-sm text-gray-400">Бухгалтер. Считает каждую копейку. В курсе всех цифр.</p>
+              <blockquote className="italic text-gray-500 mt-2">"Доверие — это когда тебе не нужно пересчитывать."</blockquote>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gray-900 border-gray-700">
+            <CardContent className="p-6 text-center">
+              <FaUserTie className="text-green-400 text-3xl mb-2" />
+              <h3 className="text-lg font-bold">@GinoSilent</h3>
+              <p className="text-sm text-gray-400">Саппорт 1. Быстрый ответ, чёткие действия. Решает без шума.</p>
+              <blockquote className="italic text-gray-500 mt-2">"Говорят мало. Действуют быстро. Это мой стиль."</blockquote>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gray-900 border-gray-700">
+            <CardContent className="p-6 text-center">
+              <FaUserTie className="text-green-300 text-3xl mb-2" />
+              <h3 className="text-lg font-bold">@NicoCleanOps</h3>
+              <p className="text-sm text-gray-400">Саппорт 2. Логистика, координация, контроль по кассам и курьерам.</p>
+              <blockquote className="italic text-gray-500 mt-2">"Если ты видишь хаос — значит ты не с нами."</blockquote>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gray-900 border-gray-700">
+            <CardContent className="p-6 text-center">
+              <FaUserTie className="text-purple-400 text-3xl mb-2" />
+              <h3 className="text-lg font-bold">@TonyDropman</h3>
+              <p className="text-sm text-gray-400">Теневой отдел. Спец-схемы, доставки, нестандарт. Всегда в тени.</p>
+              <blockquote className="italic text-gray-500 mt-2">"Меня не видно. Но если ты получаешь деньги — значит, я рядом."</blockquote>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="mt-16 text-center bg-[url('/images/scroll-bg.jpg')] bg-center bg-cover py-12 rounded-xl border border-yellow-600 shadow-lg relative">
+        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
+          <Image src="/images/seal.png" alt="Famiglia Seal" width={80} height={80} />
+        </div>
+        <h2 className="text-2xl font-bold mb-6 text-yellow-300">📜 Кодекс La Famiglia</h2>
+        <ul className="max-w-xl mx-auto text-left space-y-4 text-yellow-100">
+          <li>🔒 Мы не работаем с теми, кто спрашивает "а точно платите?"</li>
+          <li>🚫 Люди без опыта, без головы и без гарантии — мимо.</li>
+          <li>📈 У нас не обучают — у нас проверяют.</li>
+          <li>🧠 Если ты тянешь время — ты не тянешь поток.</li>
+          <li>🤝 У нас нет "бро", у нас — партнёры или никого.</li>
+          <li>🩸 Лояльность — дороже процента.</li>
+        </ul>
+      </section>
+
+      <section className="mt-16 text-center">
+        <h2 className="text-2xl font-bold mb-4">Связаться с нами</h2>
+        <p className="mb-2">Telegram: <span className="text-green-400">@famiglia_support</span></p>
+        <Button className="mt-4 bg-green-600 hover:bg-green-700">Залететь в работу</Button>
+      </section>
+    </main>
+  );
+}
+
